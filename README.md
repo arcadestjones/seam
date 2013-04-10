@@ -1,4 +1,0 @@
-seam
-====
-
-Moodle Website
