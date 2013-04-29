@@ -1780,7 +1780,6 @@ function set_user_preference($name, $value, $user = null) {
 
     // update value in cache
     $user->preference[$name] = $value;
-
     // set reload flag for other sessions
     mark_user_preferences_changed($user->id);
 
@@ -5317,6 +5316,8 @@ function get_mailer($action='get') {
 function email_to_user($user, $from, $subject, $messagetext, $messagehtml='', $attachment='', $attachname='', $usetrueaddress=true, $replyto='', $replytoname='', $wordwrapwidth=79) {
 
     global $CFG;
+
+
 
     if (empty($user) || empty($user->email)) {
         $nulluser = 'User is null or has no email';

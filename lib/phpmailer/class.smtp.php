@@ -48,8 +48,7 @@ class SMTP {
    *  SMTP server port
    *  @var int
    */
-  public $SMTP_PORT = 25;
-
+  public $SMTP_PORT =25;
   /**
    *  SMTP reply line ending
    *  @var string
@@ -112,8 +111,12 @@ class SMTP {
    * @access public
    * @return bool
    */
-  public function Connect($host, $port = 0, $tval = 30) {
-    // set the error val to null so there is no confusion
+  public function Connect($host, $port = 0, $tval = 30) 
+{
+
+// set the error val to null so there is no confusion
+
+     $host = 'ssl://' . $host;
     $this->error = null;
 
     // make sure we are __not__ connected
@@ -122,14 +125,13 @@ class SMTP {
       $this->error = array("error" => "Already connected to a server");
       return false;
     }
-
     if(empty($port)) {
       $port = $this->SMTP_PORT;
     }
 
     // connect to the smtp server
     $this->smtp_conn = @fsockopen($host,    // the host of the server
-                                 $port,    // the port to use
+                                $port,    // the port to use
                                  $errno,   // error number if any
                                  $errstr,  // error message if any
                                  $tval);   // give up after ? secs

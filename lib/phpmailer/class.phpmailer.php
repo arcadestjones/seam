@@ -73,8 +73,7 @@ class PHPMailer {
    * @var string
    */
   public $ErrorInfo         = '';
-
-  /**
+/**
    * Sets the From email address for the message.
    * @var string
    */
@@ -195,14 +194,13 @@ class PHPMailer {
    * Hosts will be tried in order.
    * @var string
    */
-  public $Host          = 'localhost';
+  public $Host = 'localhost';
 
   /**
    * Sets the default SMTP server port.
    * @var int
    */
   public $Port          = 25;
-
   /**
    * Sets the SMTP HELO of the message (Default is $Hostname).
    * @var string
